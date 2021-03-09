@@ -13,7 +13,7 @@
 
   <!-- TODO: ffmpeg -loop 1 -i img.jpg -i audio.mp4 -movflags +faststart -bitexact -map_metadata -1 -c:v libx264 -tune stillimage -c:a aac -pix_fmt yuv420p -shortest -vf scale=1920:-1 out.mp4 -->
 
-  <title>Title</title>
+  <title>HEMS-Skulpturengarten 2020/2021</title>
 </head>
 <body class="d-flex flex-column h-100">
 <header>
@@ -38,236 +38,229 @@
 
 <main>
   <div class="container">
-    <div style="position: relative;">
-      <img src="img/bg.png" class="img-fluid">
+    <div class="d-flex justify-content-center">
+      <div id="imgDiv" style="position: relative">
+        <img id="imgNode" src="img/bg.png" class="img-fluid" onclick="onBtnClick(null)"
+             alt="Zeichnung des Skulpturengartens, aus der Luft">
 
-      <!-- TODO: Add animation to card close -->
+        <!-- Load hd image in the background and show button when ready -->
+        <!-- <img src="img/feathericons/maximize-2.svg" style="padding: revert; position: absolute; top: 15px; right: 15px;" -->
+        <!-- alt="Click to maximize image" onclick="toggleFullscreen(this)"> -->
 
-      <div>
-        <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card1"
-                style="padding: revert; font-size: 1.25rem; position: absolute; top: 50px; left: 125px;">
-          +
-        </button>
+        <!-- TODO: Add animation to card close -->
 
-        <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
-             style="position: absolute" id="card1">
-          <div class="card-header">
-            <div class="row">
-              <div class="col">
-                Das Höllentor
-              </div>
+        <div>
+          <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card1"
+                  style="padding: revert; font-size: 1.25rem; position: absolute; top: 50px; left: 125px;">
+            +
+          </button>
 
-              <div class="col">
-                11.000 Menschen
-                <br>
-                <span style="font-weight:bolder; color: red">(Gibt es einen "offiziellen" Namen?)</span>
+          <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
+               style="position: absolute" id="card1">
+            <div class="card-header">
+              <div class="row">
+                <div class="col">
+                  Das Höllentor
+                </div>
+
+                <div class="col">
+                  11.000 Menschen
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="card-body">
-            <div class="row">
-              <div class="col">
-                <video style="max-width: 50vw; max-height: 50vh;"
-                       src="media/das_hoellentor/video.mp4" controls></video>
-                <br>
-
-                <a href="media/das_hoellentor/Das%20Höllentor.pdf" target="_blank">
-                  Das Höllentor.pdf
-                </a>
-              </div>
-
-              <div class="col">
-                <p class="small text-muted">
-                  <!-- TODO: Audio should show 'fire place' or 'empty shelter' loop -->
-                  // TODO: Audio should show 'fire place' or 'empty shelter' loop
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <video style="max-width: 50vw; max-height: 50vh;"
+                         src="media/das_hoellentor/video.mp4" controls></video>
                   <br>
-                </p>
 
-                <audio style="min-width: 20vw; max-width: 50vw;" controls>
-                  <source src="media/11_000_menschen/audio.m4a" type="audio/mp4">
-                </audio>
-                <br>
+                  <a href="media/das_hoellentor/Das%20Höllentor.pdf" target="_blank">
+                    Das Höllentor.pdf
+                  </a>
+                </div>
 
-                <a href="media/11_000_menschen/11.000%20Menschen.pdf" target="_blank">
-                  11.000 Menschen.pdf
-                </a>
+                <div class="col">
+                  <!-- TODO: Audio still needs fire-sounds in the background -->
+                  <video style="max-width: 50vw; max-height: 50vh" src="media/11_000_menschen/video.mp4"
+                         controls></video>
+                  <br>
+
+                  <a href="media/11_000_menschen/11.000%20Menschen.pdf" target="_blank">
+                    11.000 Menschen.pdf
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="card-footer text-muted">
-            <div class="row">
-              <div class="col">
-                Text von <em>Anwar</em>
-                <br>
+            <div class="card-footer text-muted">
+              <div class="row">
+                <div class="col">
+                  Text von <em>Anwar</em>
+                  <br>
 
-                Bild von <em>Lukas</em>
-                <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
+                  Bild von <em>Lukas</em>
+                  <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
                   --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
                 --></a>
-                <br>
-                Bild- und Videobearbeitung von <em>Ali</em>
-                <br>
-                Eingesprochen von <em>Ali</em>
-              </div>
+                  <br>
 
-              <div class="col">
-                Text von <em>Arik</em>
-                <br><br><br>
+                  Eingesprochen von <em>Ali</em>
+                  <br>
 
-                Eingesprochen von <em>Jakob</em>
+                  Bild- und Videobearbeitung von <em>Ali</em>
+                </div>
+
+                <div class="col">
+                  Text von <em>Arik</em>
+                  <br>
+
+                  Video von <em>Madeleine</em>
+                  <br>
+
+                  Eingesprochen von <em>Jakob</em>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card2"
-                style="padding: revert; font-size: 1.25rem; position: absolute; top: 260px; left: 215px;">
-          +
-        </button>
+        <div>
+          <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card2"
+                  style="padding: revert; font-size: 1.25rem; position: absolute; top: 260px; left: 215px;">
+            +
+          </button>
 
-        <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
-             style="position: absolute" id="card2">
-          <div class="card-header">
-            18 Atemzüge
-          </div>
+          <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
+               style="position: absolute" id="card2">
+            <div class="card-header">
+              18 Atemzüge
+            </div>
 
-          <div class="card-body">
-            <audio style="min-width: 20vw; max-width: 50vw;" controls>
-              <source src="media/18_atemzuege/audio.m4a" type="audio/mp4">
-            </audio>
-            <br>
+            <div class="card-body">
+              <audio style="min-width: 20vw; max-width: 50vw;" controls>
+                <source src="media/18_atemzuege/audio.m4a" type="audio/mp4">
+              </audio>
+              <br>
 
-            <a href="media/18_atemzuege/18%20Atemzüge.pdf" target="_blank">
-              18 Atemzüge.pdf
-            </a>
-          </div>
+              <a href="media/18_atemzuege/18%20Atemzüge.pdf" target="_blank">
+                18 Atemzüge.pdf
+              </a>
+            </div>
 
-          <div class="card-footer text-muted">
-            Text von <em>Anwar</em>
-            <br>
+            <div class="card-footer text-muted">
+              Text von <em>Anwar</em>
+              <br>
 
-            Eingesprochen von <em>Lea</em>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card3"
-                style="padding: revert; font-size: 1.25rem; position: absolute; top: 75px; left: 400px;">
-          +
-        </button>
-
-        <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
-             style="position: absolute" id="card3">
-          <div class="card-header">
-            Der kleine Vogel
-            <br>
-            <span style="font-weight:bolder; color: red">(Gibt es einen "offiziellen" Namen? Eine PDF/Ein Bild vom Text?)</span>
-          </div>
-
-          <div class="card-body">
-            <video style="max-width: 50vw; max-height: 50vh;" src="media/der_kleine_vogel/video.mp4"
-                   controls></video>
-            <br>
-
-            <!--            <a href="media/18_atemzuege/18%20Atemzüge.pdf" target="_blank">-->
-            <!--              18 Atemzüge.pdf-->
-            <!--            </a>-->
-          </div>
-
-          <div class="card-footer text-muted">
-            Text von <em>Victoria</em>
-            <br>
-
-            Zeichnung von <em>Lea</em>
-            <br>
-
-            Eingesprochen von <em>Sara</em>
+              Eingesprochen von <em>Lea</em>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card5"
-                style="padding: revert; font-size: 1.25rem; position: absolute; top: 225px; left: 75px;">
-          +
-        </button>
+        <div>
+          <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card3"
+                  style="padding: revert; font-size: 1.25rem; position: absolute; top: 75px; left: 400px;">
+            +
+          </button>
 
-        <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
-             style="position: absolute" id="card5">
-          <div class="card-header">
-            Schuh (Text 1)
-            <br>
-            <span style="font-weight:bolder; color: red">(Gibt es einen "offiziellen" Namen? Eine PDF/Ein Bild vom Text?)</span>
-          </div>
+          <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
+               style="position: absolute" id="card3">
+            <div class="card-header">
+              Wie ein kleiner Vogel mutig wurde
+            </div>
 
-          <div class="card-body">
-            <video style="max-width: 50vw; max-height: 50vh;"
-                   src="media/schuh/video.mp4" controls></video>
-            <br>
+            <div class="card-body">
+              <video style="max-width: 50vw; max-height: 50vh;"
+                     src="media/kleiner_vogel/video.mp4"
+                     controls></video>
+              <br>
 
-            <!--            <a href="media/schuh/Schuh.pdf" target="_blank">-->
-            <!--              Schuh.pdf-->
-            <!--            </a>-->
-          </div>
+              <a href="media/kleiner_vogel/Wie%20ein%20kleiner%20Vogel%20mutig%20wurde.pdf"
+                 target="_blank">
+                Wie ein kleiner Vogel mutig wurde.pdf
+              </a>
+            </div>
 
-          <div class="card-footer text-muted">
-            Text von <em>???</em> <!-- TODO: Wer hat den Text geschrieben -->
-            <br>
+            <div class="card-footer text-muted">
+              Text von <em>Victoria</em>
+              <br>
 
-            Bild von <em>Lukas</em>
-            <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
-            --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
-          --></a>
-            <br>
+              Zeichnung von <em>Lea</em>
+              <br>
 
-            Eingesprochen von <em>Jakob</em>
+              Eingesprochen von <em>Sara</em>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card6"
-                style="padding: revert; font-size: 1.25rem; position: absolute; top: 225px; left: 115px;">
-          +
-        </button>
+        <div>
+          <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card5"
+                  style="padding: revert; font-size: 1.25rem; position: absolute; top: 225px; left: 75px;">
+            +
+          </button>
 
-        <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
-             style="position: absolute" id="card6">
-          <div class="card-header">
-            Schuh (Text 2)
-            <br>
-            <span style="font-weight:bolder; color: red">(Gibt es einen "offiziellen" Namen? Eine PDF/Ein Bild vom Text?)</span>
-          </div>
+          <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
+               style="position: absolute" id="card5">
+            <div class="card-header">
+              Schuh
+            </div>
 
-          <div class="card-body">
-            <video style="max-width: 50vw; max-height: 50vh;"
-                   src="media/schuh/video2.mp4" controls></video>
-            <br>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <video style="max-width: 25vw; max-height: 25vh" src="media/schuh/video_lukas.mp4" controls></video>
+                </div>
 
-            <!--            <a href="media/schuh/Schuh.pdf" target="_blank">-->
-            <!--              Schuh2.pdf-->
-            <!--            </a>-->
-          </div>
+                <div class="col">
+                  <video style="max-width: 25vw; max-height: 25vh" src="media/schuh/video_jakob.mp4" controls></video>
+                </div>
+              </div>
 
-          <div class="card-footer text-muted">
-            Text von <em>???</em> <!-- TODO: Wer hat den Text geschrieben -->
-            <br>
+              <div class="row">
+                <a href="media/schuh/Schuh%20(Lukas%20und%20Jakob).pdf" target="_blank">
+                  Schuh (Lukas und Jakob).pdf
+                </a>
+              </div>
 
-            Bild von <em>Lukas</em>
-            <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
-            --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
-         --></a>
-            <br>
 
-            Eingesprochen von <em>Lukas</em>
-            <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
-            --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
-         --></a>
+            </div>
+
+            <div class="card-footer text-muted">
+              <div class="row">
+                <div class="col">
+                  Text von <em>Lukas</em>
+                  <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
+                 --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
+               --></a>
+                  <br>
+
+                  Bild von <em>Lukas</em>
+                  <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
+                 --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
+               --></a>
+                  <br>
+
+                  Eingesprochen von <em>Lukas</em>
+                  <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
+                 --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
+               --></a>
+                </div>
+
+                <div class="col">
+                  Text von <em>Jakob</em>
+                  <br>
+
+                  Bild von <em>Lukas</em>
+                  <a href="https://www.instagram.com/lukkir_/" rel="noopener" target="_blank"><!--
+                 --><img src="img/feathericons/instagram.svg" alt="Instagram @lukkir_"><!--
+               --></a>
+                  <br>
+
+                  Eingesprochen von <em>Jakob</em>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -304,41 +297,81 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/5.1.0/screenfull.min.js"
+        integrity="sha512-SGPHIoS+NsP1NUL5RohNpDs44JlF36tXLN6H3Cw+EUyenEc5zPXWqfw9D+xmvR00QYUYewQIJQ6P5yH82Vw6Fg=="
+        crossorigin="anonymous"></script>
 <script>
-    let currActiveCard;
+  let fullscreenBtn;
+  let currActiveCard;
 
-    function onBtnClick(btn) {
-        const card = document.getElementById(btn.getAttribute('data-target'));
+  screenfull.on('change', () => {
+    if (screenfull.isEnabled) {
+      const imgNode = document.getElementById('imgNode');
 
-        if (currActiveCard) {
-            hideCard(currActiveCard);
-        }
+      if (screenfull.isFullscreen) {
+        imgNode.src = 'img/bg_hd.png';
+      } else {
+        imgNode.src = 'img/bg.png';
+      }
 
-        if (currActiveCard !== card) {
-            currActiveCard = card;
-
-            showCard(btn, card);
+      if (fullscreenBtn) {
+        if (screenfull.isFullscreen) {
+          fullscreenBtn.src = 'img/feathericons/minimize-2.svg';
         } else {
-            currActiveCard = null;
+          fullscreenBtn.src = 'img/feathericons/maximize-2.svg';
         }
+      }
+    }
+  });
+
+  function toggleFullscreen(elem) {
+    fullscreenBtn = elem;
+
+    if (screenfull.isEnabled) {
+      if (screenfull.isFullscreen) {
+        screenfull.exit();
+      } else {
+        screenfull.request(document.getElementById('imgDiv'));
+      }
+    }
+  }
+
+  function onBtnClick(btn) {
+    if (currActiveCard) {
+      hideCard(currActiveCard);
     }
 
-    function hideCard(card) {
-        card.classList.add('d-none');
+    if (btn) {
+      const card = document.getElementById(btn.getAttribute('data-target'));
 
-        card.style.zIndex = 'auto';
+      if (currActiveCard !== card) {
+        currActiveCard = card;
 
-        card.querySelectorAll('video').forEach(e => e.pause());
-        card.querySelectorAll('audio').forEach(e => e.pause());
+        showCard(btn, card);
+      } else {
+        currActiveCard = null;
+      }
+    } else {
+      currActiveCard = null;
     }
+  }
 
-    function showCard(btn, card) {
-        card.classList.remove('d-none');
+  function hideCard(card) {
+    card.classList.add('d-none');
 
-        card.style.top = btn.style.top;
-        card.style.left = `calc(${btn.style.left} + ${btn.offsetWidth}px + 5px)`;
-        card.style.zIndex = '5';
-    }
+    card.style.zIndex = 'auto';
+
+    card.querySelectorAll('video').forEach(e => e.pause());
+    card.querySelectorAll('audio').forEach(e => e.pause());
+  }
+
+  function showCard(btn, card) {
+    card.classList.remove('d-none');
+
+    card.style.top = btn.style.top;
+    card.style.left = `calc(${btn.style.left} + ${btn.offsetWidth}px + 5px)`;
+    card.style.zIndex = '5';
+  }
 </script>
 </body>
 </html>
