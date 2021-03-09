@@ -4,39 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
-        crossorigin="anonymous">
-  <link href="style.css" rel="stylesheet">
+  <%- include(`${RES_DIR}/.templates/head.html`); %>
 
   <title>Impressum | HEMS-Skulpturengarten 2020/2021</title>
 </head>
 <body class="d-flex flex-column h-100">
-<header>
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="me-auto"></div>
-
-      <div>
-        <a href="http://hems.de/" target="_blank" rel="noopener"><!--
-          --><img src="img/hems.svg" alt="Webseite der Heinrich-Emanuel-Merck-Schule Darmstadt" width="60" height="60"
-                  class="d-inline-block align-top"><!--
-        --></a>
-
-        <a href="http://skulpturengarten-darmstadt.de/" target="_blank" rel="noopener"><!--
-          --><img src="img/Skulpturengarten.png" alt="Webseite des Skulpturengarten Darmstadt" width="60" height="60"
-                  class="d-inline-block align-top"><!--
-        --></a>
-      </div>
-    </div>
-  </nav>
-</header>
+<%- include(`${RES_DIR}/.templates/header.html`); %>
 
 <main>
   <div class="container">
-    <h3><a href="index.html">« Zurück zur Übersicht</a></h3>
+    <h3><a href="<%- url.root %>">« Zurück zur Übersicht</a></h3>
   </div>
 
   <div class="container text-center">
@@ -81,7 +58,6 @@
     Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
     <br><br>
 
-
     <em>
       Quelle: <a href="https://www.erecht24.de/impressum-generator.html"
                  target="_blank" rel="noopener noreferrer">https://www.e-recht24.de/impressum-generator.html</a>
@@ -89,15 +65,8 @@
   </div>
 </main>
 
-<footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-    <small><a href="legal.html" class="link-dark">Impressum</a> | <a href="privacy.html" class="link-dark">Datenschutzbestimmung</a></small>
+<%- include(`${RES_DIR}/.templates/footer.html`); %>
 
-    <small class="text-muted float-end">Copyright &copy; Some rights reserved.</small>
-  </div>
-</footer>
-
-<script async defer src="https://simplea.sprax2013.de/latest.js"></script>
-<noscript><img src="https://simplea.sprax2013.de/noscript.gif" alt=""></noscript>
+<%- include(`${RES_DIR}/.templates/scripts.html`); %>
 </body>
 </html>

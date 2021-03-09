@@ -1,0 +1,69 @@
+<div>
+  <button class="rounded-circle btn btn-primary" onclick="onBtnClick(this)" data-target="card<%- index %>"
+          style="padding: revert;font-size: 1.25rem;position: absolute;top: <%- info.coords.y %>px;left: <%- info.coords.x %>px;">
+    +
+  </button>
+
+  <div class="card text-center d-none animate__animated animate__fadeInDown animate__faster"
+       style="position: absolute" id="card<%- index %>">
+    <!--    <div class="card-header">-->
+    <!--      <div class="row">-->
+    <!--        <% info.media.forEach((m) => { %>-->
+    <!--        <div class="col"><%= m.title %></div>-->
+    <!--        <% }); %>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <div class="card-body">
+      <div class="row">
+        <% info.media.forEach((m) => { %>
+        <div class="col">
+          <h5><u><%= m.title %></u></h5>
+
+          <% if(m.type == 'video') { %>
+          <video style="max-width: 50vw; max-height: 50vh" src="<%- url.root %>/<%- m.mediaFile %>" controls></video>
+          <% } else if(m.type == 'audio') { %>
+          <audio style="min-width: 20vw; max-width: 50vw;" controls>
+            <source src="<%- url.root %>/<%- m.mediaFile %>" type="audio/mp4">
+          </audio>
+          <% } else {
+          throw new Error('Unsupported media type');
+          } %>
+
+          <% if(m.pdfFile) { %>
+          <br>
+          <a href="<%- url.root %>/<%- m.pdfFile %>" target="_blank"><%= getUriFile(`${url.root}/${m.pdfFile}`) %></a>
+          <% } %>
+        </div>
+        <br>
+        <% }); %>
+      </div>
+
+      <% if(info.pdfFile) { %>
+      <a href="<%- url.root %>/<%- info.pdfFile %>" target="_blank">
+        <%= getUriFile(`${url.root}/${info.pdfFile}`) _%>
+      </a>
+      <% } %>
+    </div>
+
+    <div class="card-footer text-muted">
+      <div class="row">
+        <% info.media.forEach((m) => { %>
+        <div class="col">
+          <% for (const key in m.contributors) { %>
+          <% const c = m.contributors[key] %>
+          <%= contributorTypeName[key] %> von <strong><%= c.name %></strong>
+
+          <% if(c.instagram) { %>
+          <a href="https://www.instagram.com/<%= encodeURIComponent(c.instagram) %>/" rel="noopener" target="_blank"><!--
+         --><img src="<%- url.root %>/img/feathericons/instagram.svg" alt="Instagram @<%= c.instagram %>"><!--
+       --></a>
+          <% } %>
+          <br>
+          <% } /* forEach */ %>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>

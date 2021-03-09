@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="h-100" lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%- include(`${RES_DIR}/.templates/head.html`); %>
+
+  <title>HEMS-Skulpturengarten 2020/2021</title>
+</head>
+<body class="d-flex flex-column h-100">
+<%- include(`${RES_DIR}/.templates/header.html`); %>
+
+<main>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div id="imgDiv" style="position: relative">
+        <img id="imgNode" src="<%- url.root %>/img/bg.png" class="img-fluid" onclick="onBtnClick(null)"
+             alt="Zeichnung des Skulpturengartens, aus der Luft">
+
+        <!-- Load hd image in the background and show button when ready -->
+        <!-- <img src="img/feathericons/maximize-2.svg" style="padding: revert; position: absolute; top: 15px; right: 15px;" -->
+        <!-- alt="Click to maximize image" onclick="toggleFullscreen(this)"> -->
+
+        <!-- TODO: Add animation to card close -->
+
+        <% mediaList.forEach((m, index) => { %>
+        <%- include(`${RES_DIR}/.templates/media/media.html`, {info: m, index}); %>
+        <% }); %>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="text-center">
+      <h3>Wir im Skulpturengarten Darmstadt</h3>
+
+      <p class="blockquote">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </p>
+
+      <p class="blockquote">
+        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+        pede
+        justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+      </p>
+
+      <p class="blockquote">
+        In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+        Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+      </p>
+    </div>
+  </div>
+</main>
+
+<%- include(`${RES_DIR}/.templates/footer.html`); %>
+
+<script src="<%- url.root %>/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/5.1.0/screenfull.min.js"
+        integrity="sha512-SGPHIoS+NsP1NUL5RohNpDs44JlF36tXLN6H3Cw+EUyenEc5zPXWqfw9D+xmvR00QYUYewQIJQ6P5yH82Vw6Fg=="
+        crossorigin="anonymous" async defer></script>
+<script>
+
+</script>
+
+<%- include(`${RES_DIR}/.templates/scripts.html`); %>
+</body>
+</html>
