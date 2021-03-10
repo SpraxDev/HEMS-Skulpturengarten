@@ -23,7 +23,8 @@ function onBtnClick(btn) {
 
 // noinspection JSUnusedGlobalSymbols
 function hideCard(card) {
-  card.classList.add('d-none');
+  card.classList.remove('slideIn', 'slideOut');
+  card.classList.add('slideOut');
 
   card.style.zIndex = 'auto';
 
@@ -33,9 +34,21 @@ function hideCard(card) {
 
 // noinspection JSUnusedGlobalSymbols
 function showCard(btn, card) {
-  card.classList.remove('d-none');
+  card.classList.remove('slideIn', 'slideOut', 'd-none');
+  card.classList.add('slideIn');
 
   card.style.top = btn.style.top;
   card.style.left = `calc(${btn.style.left} + ${btn.offsetWidth}px + 5px)`;
   card.style.zIndex = '5';
 }
+
+window.addEventListener('load', () => {
+  document.querySelectorAll('.animated').forEach((elem) => {
+    elem.addEventListener('animationend', () => {
+      if (elem.classList.contains('slideOut')) {
+        elem.classList.add('d-none');
+        elem.classList.remove('slideOut');
+      }
+    });
+  });
+});

@@ -1,6 +1,26 @@
-.animated.fade-in {
-    -webkit-transition: opacity 2.0s ease-in;
-    -moz-transition: opacity 2.0s ease-in;
-    -o-transition: opacity 2.0s ease-in;
-    opacity: 1;
+.animated.slideIn {
+    animation: slideIn .5s ease;
+}
+
+.animated.slideOut {
+    animation: slideOut .5s ease;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity:   0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity:   100%;
+        transform: translateZ(0);
+    }
+}
+
+@keyframes slideOut {
+    to {
+        opacity:   0;
+        transform: translate3d(0, -100%, 0);
+    }
 }
