@@ -57,9 +57,9 @@ export const ejsData: IEjsData = {
 
     mediaList: [
         {
-            coords: {
-                x: 320,
-                y: 580
+            offset: {
+                x: '35%',
+                y: '82%'
             },
             media: [
                 {
@@ -93,9 +93,9 @@ export const ejsData: IEjsData = {
             ]
         },
         {
-            coords: {
-                x: 255,
-                y: 545
+            offset: {
+                x: '28%',
+                y: '78%'
             },
             media: [
                 {
@@ -112,9 +112,9 @@ export const ejsData: IEjsData = {
             ]
         },
         {
-            coords: {
-                x: 278,
-                y: 94
+            offset: {
+                x: '30.5%',
+                y: '14%'
             },
             media: [
                 {
@@ -133,9 +133,9 @@ export const ejsData: IEjsData = {
             ]
         },
         {
-            coords: {
-                x: 823,
-                y: 335
+            offset: {
+                x: '90%',
+                y: '48%'
             },
             media: [
                 {

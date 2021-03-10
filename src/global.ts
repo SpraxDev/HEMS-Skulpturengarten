@@ -8,9 +8,9 @@ export interface IEjsData {
     }
 
     readonly mediaList: {
-        readonly coords: {
-            readonly x: number;
-            readonly y: number;
+        readonly offset: {
+            readonly x: string;
+            readonly y: string;
         };
 
         readonly media: IMedia[];
