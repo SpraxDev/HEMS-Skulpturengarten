@@ -1,6 +1,8 @@
 export interface IEjsData {
     readonly RES_DIR: string;
 
+    readonly pageTitle: string;
+
     readonly url: {
         readonly root: string;
     }

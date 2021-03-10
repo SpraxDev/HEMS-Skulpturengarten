@@ -44,6 +44,8 @@ const contributors: { [key: string]: IContributor } = {
 export const ejsData: IEjsData = {
     RES_DIR: cfg.RES_DIR,
 
+    pageTitle: 'HEMS-Skulpturengarten 2020/2021',
+
     url: {
         root: isProduction ? 'https://hems.sprax2013.de/skulpturengarten' : cfg.OUT_DIR
     },
