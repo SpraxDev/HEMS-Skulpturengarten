@@ -7,6 +7,7 @@ import {
     relative as getRelativePath,
     resolve as resolvePath
 } from 'path';
+import PurgeCSS from 'purgecss';
 
 import { cfg, ejsData } from './config';
 
@@ -28,6 +29,24 @@ function buildPage(): void {
     for (const includedFile of cfg.includedFiles) {
         populateOutDir(includedFile.file, includedFile.targetFile);
     }
+
+    // Remove unused CSS
+    new PurgeCSS().purge({
+        content: ['dist/**/*.html', 'dist/**/*.js'],
+        css: ['dist/**/*.css']
+    }).then((res) => {
+        for (const css of res) {
+            if (css.file) {
+                const oldSize = fs.lstatSync(css.file).size;
+
+                fs.writeFileSync(css.file, css.css);
+
+                const newSize = fs.lstatSync(css.file).size;
+
+                console.log(`Minified '${css.file}' from ${oldSize} to ${newSize} bytes (${((newSize / oldSize) * 100).toFixed(2)}%)`);
+            }
+        }
+    }).catch(console.error);
 }
 
 function populateOutDir(path: string, relativePath?: string): void {
@@ -54,6 +73,8 @@ function populateOutDir(path: string, relativePath?: string): void {
                 while (file = dir.readSync()) {
                     populateOutDir(joinPath(dir.path, file.name));
                 }
+
+                dir.closeSync();
             } else {
                 console.error('Unsupported resource:', path);
             }
