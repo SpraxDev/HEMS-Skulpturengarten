@@ -1,4 +1,4 @@
-let fullscreenBtn;
+// noinspection JSUnusedGlobalSymbols
 let currActiveCard;
 
 function onBtnClick(btn) {
@@ -21,6 +21,7 @@ function onBtnClick(btn) {
   }
 }
 
+// noinspection JSUnusedGlobalSymbols
 function hideCard(card) {
   card.classList.add('d-none');
 
@@ -30,6 +31,7 @@ function hideCard(card) {
   card.querySelectorAll('audio').forEach(e => e.pause());
 }
 
+// noinspection JSUnusedGlobalSymbols
 function showCard(btn, card) {
   card.classList.remove('d-none');
 
@@ -37,45 +39,3 @@ function showCard(btn, card) {
   card.style.left = `calc(${btn.style.left} + ${btn.offsetWidth}px + 5px)`;
   card.style.zIndex = '5';
 }
-
-function toggleFullscreen(elem) {
-  fullscreenBtn = elem;
-
-  if (screenfull.isEnabled) {
-    if (screenfull.isFullscreen) {
-      screenfull.exit();
-    } else {
-      screenfull.request(document.getElementById('imgDiv'));
-    }
-  }
-}
-
-window.addEventListener('load', () => {
-  if (screenfull) {
-    if (screenfull.isEnabled) {
-      screenfull.on('change', () => {
-        const imgNode = document.getElementById('imgNode');
-
-        if (screenfull.isFullscreen) {
-          imgNode.src = 'img/bg_hd.png';
-        } else {
-          imgNode.src = 'img/bg.png';
-        }
-
-        if (fullscreenBtn) {
-          if (screenfull.isFullscreen) {
-            fullscreenBtn.src = 'img/feathericons/minimize-2.svg';
-          } else {
-            fullscreenBtn.src = 'img/feathericons/maximize-2.svg';
-          }
-        }
-      });
-
-      console.info('Successfully initialized fullscreen capabilities');
-    } else {
-      console.info('Full Screen API is not supported by your browser');
-    }
-  } else {
-    console.error(`Failed to load 'screenfull' - Fullscreen is not available`);
-  }
-});
