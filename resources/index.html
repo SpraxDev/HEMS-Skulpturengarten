@@ -2,8 +2,6 @@
 <html class="h-100" lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <%- include(`${RES_DIR}/.templates/head.html`); %>
 
   <title><%= pageTitle %></title>
@@ -15,12 +13,15 @@
   <div class="container">
     <div class="d-grid justify-content-center">
       <div id="imgDiv" style="position: relative">
-        <img id="imgNode" src="<%- url.root %>/img/bg.png" class="img-fluid" onclick="onBtnClick(null)"
-             width="907" height="695" alt="Zeichnung des Skulpturengartens, aus der Luft">
+        <picture>
+          <source srcset="<%- url.root %>/img/bg.webp 907w,<%- url.root %>/img/bg_hd.webp 1920w"
+                  sizes="(max-width: 2000px) 907px, 1920px" type="image/webp">
+          <source srcset="<%- url.root %>/img/bg.png 907w,<%- url.root %>/img/bg_hd.png 1920w"
+                  sizes="(max-width: 2000px) 907px, 1920px" type="image/png">
 
-        <!-- Load hd image in the background and show button when ready -->
-        <!-- <img src="<%- url.root %>/img/feathericons/maximize-2.svg" style="padding: revert; position: absolute; top: 15px; right: 15px;" -->
-        <!-- alt="Click to maximize image" onclick="toggleFullscreen(this)"> -->
+          <img src="<%- url.root %>/img/bg.png" class="img-fluid" onclick="onBtnClick(null)"
+               alt="Zeichnung des Skulpturengartens, aus der Luft">
+        </picture>
 
         <!-- TODO: Add animation to card close -->
 
