@@ -7,6 +7,11 @@ export const cfg = Object.freeze({
     RES_DIR: resolvePath(joinPath(__dirname, '..', 'resources')),
     OUT_DIR: resolvePath(joinPath(__dirname, '..', 'dist')),
 
+    includedFiles: [{
+        file: resolvePath(joinPath(__dirname, '..', 'LICENSE')),
+        targetFile: './LICENSE'
+    }],
+
     skipHiddenResources: true
 });
 
