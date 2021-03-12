@@ -33,17 +33,20 @@ function buildPage(): void {
     // Remove unused CSS
     new PurgeCSS().purge({
         content: ['dist/**/*.html', 'dist/**/*.js'],
-        css: ['dist/**/*.css']
+        css: ['dist/**/*.css'],
+        variables: true
     }).then((res) => {
         for (const css of res) {
             if (css.file) {
                 const oldSize = fs.lstatSync(css.file).size;
+                const data = Buffer.from(css.css);
 
-                fs.writeFileSync(css.file, css.css);
+                if (oldSize != data.length) {
+                    fs.writeFileSync(css.file, data);
 
-                const newSize = fs.lstatSync(css.file).size;
-
-                console.log(`Minified '${css.file}' from ${oldSize} to ${newSize} bytes (${((newSize / oldSize) * 100).toFixed(2)}%)`);
+                    console.log(`Minified '${css.file}' from ${oldSize} to ${data.length} bytes ` +
+                            `(reduced by ${((1 - data.length / oldSize) * 100).toFixed(2)}%)`);
+                }
             }
         }
     }).catch(console.error);
