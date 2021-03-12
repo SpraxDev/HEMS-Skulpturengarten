@@ -5,6 +5,10 @@
   </button>
 
   <div class="card text-center d-none animated" style="position: absolute" id="card<%- index %>">
+    <div class="card-title">
+      <button type="button" class="btn-close float-end" aria-label="Close" onclick="onBtnClick(null)"></button>
+    </div>
+
     <div class="card-body">
       <div class="row">
         <% info.media.forEach((m) => { %>

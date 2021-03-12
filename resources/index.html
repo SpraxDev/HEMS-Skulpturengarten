@@ -9,6 +9,7 @@
 <body class="d-flex flex-column h-100">
 <%- include(`${RES_DIR}/.templates/header.html`); %>
 
+<!-- TODO: Dark theme -->
 <main>
   <div class="container">
     <div class="d-grid justify-content-center">
@@ -23,7 +24,6 @@
                alt="Zeichnung des Skulpturengartens, aus der Luft">
         </picture>
 
-        <!-- TODO: Add close button to cards -->
         <!-- TODO: Make sure card is always visible and does not overflow -->
         <% mediaList.forEach((m, index) => { %>
         <%- include(`${RES_DIR}/.templates/media.html`, {info: m, index}); %>
