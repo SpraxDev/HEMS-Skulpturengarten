@@ -10,6 +10,11 @@ function onBtnClick(btn) {
     const card = document.getElementById(btn.getAttribute('data-target'));
 
     if (currActiveCard !== card) {
+      if (currActiveCard) {
+        // Skip .slideOut-animation to prevent content shift
+        currActiveCard.classList.add('d-none');
+      }
+
       currActiveCard = card;
 
       showCard(btn, card);
@@ -26,8 +31,6 @@ function hideCard(card) {
   card.classList.remove('slideIn', 'slideOut');
   card.classList.add('slideOut');
 
-  card.style.zIndex = 'auto';
-
   card.querySelectorAll('video').forEach(e => e.pause());
   card.querySelectorAll('audio').forEach(e => e.pause());
 }
@@ -36,10 +39,6 @@ function hideCard(card) {
 function showCard(btn, card) {
   card.classList.remove('slideIn', 'slideOut', 'd-none');
   card.classList.add('slideIn');
-
-  card.style.top = btn.style.top;
-  card.style.left = `calc(${btn.style.left} + ${btn.offsetWidth}px + 5px)`;
-  card.style.zIndex = '5';
 }
 
 window.addEventListener('load', () => {

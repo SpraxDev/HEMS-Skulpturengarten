@@ -1,0 +1,64 @@
+<div class="card d-none animated" id="card<%- index %>">
+  <div class="card-title">
+    <button type="button" class="btn-close float-end" aria-label="Close" onclick="onBtnClick(null)"></button>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <% info.media.forEach((m) => { %>
+      <div class="col-md">
+        <h5 class="text-center"><u><%= m.title %></u></h5>
+
+        <% if(m.type == 'video') { %>
+        <video style="width: 100%; max-height: 75vh;" src="<%- url.root %>/<%- m.mediaFile %>" controls></video>
+        <% } else if(m.type == 'audio') { %>
+        <audio style="width: 100%; max-height: 75vh;" controls>
+          <source src="<%- url.root %>/<%- m.mediaFile %>" type="audio/mp4">
+        </audio>
+        <% } else {
+        throw new Error('Unsupported media type');
+        } %>
+
+        <% if(m.pdfFile) { %>
+        <br>
+        <div class="text-center">
+          <a href="<%- url.root %>/<%- m.pdfFile %>" target="_blank"><%= getUriFile(`${url.root}/${m.pdfFile}`) %></a>
+        </div>
+        <% } %>
+      </div>
+      <br>
+      <% }); %>
+    </div>
+
+    <% if(info.pdfFile) { %>
+    <div class="text-center">
+      <a href="<%- url.root %>/<%- info.pdfFile %>" target="_blank"><%= getUriFile(`${url.root}/${info.pdfFile}`)
+        _%></a>
+    </div>
+    <% } %>
+  </div>
+
+  <div class="card-footer text-muted">
+    <div class="row">
+      <% info.media.forEach((m, i) => { %>
+      <div class="col-md">
+        <% if(i != 0) { %>
+        <hr class="d-lg-none">
+        <% } %>
+
+        <% for (const key in m.contributors) { %>
+        <% const c = m.contributors[key] %>
+        <%= contributorTypeName[key] %> von <strong><%= c.name %></strong>
+
+        <% if(c.instagram) { %>
+        <a href="https://www.instagram.com/<%= encodeURIComponent(c.instagram) %>/" rel="noopener"
+           target="_blank"><img src="<%- url.root %>/img/feathericons/instagram.svg"
+                                alt="<%= c.name %> ist @<%= c.instagram %> auf Instagram"></a>
+        <% } %>
+        <br>
+        <% } /* for...in */ %>
+      </div>
+      <% }); /* forEach */ %>
+    </div>
+  </div>
+</div>

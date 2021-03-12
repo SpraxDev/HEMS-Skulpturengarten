@@ -11,26 +11,41 @@
 
 <!-- TODO: Dark theme -->
 <main>
-  <div class="container">
-    <div class="d-grid justify-content-center">
-      <div id="imgDiv" style="position: relative">
-        <picture>
-          <source srcset="<%- url.root %>/img/bg.webp 907w,<%- url.root %>/img/bg_hd.webp 1920w"
-                  sizes="(max-width: 2000px) 907px, 1920px" type="image/webp">
-          <source srcset="<%- url.root %>/img/bg.png 907w,<%- url.root %>/img/bg_hd.png 1920w"
-                  sizes="(max-width: 2000px) 907px, 1920px" type="image/png">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md d-none d-lg-block"></div>
 
-          <img src="<%- url.root %>/img/bg.png" class="img-fluid" onclick="onBtnClick(null)"
-               alt="Zeichnung des Skulpturengartens, aus der Luft">
-        </picture>
+      <div class="col-md-5">
+        <div class="d-grid justify-content-center">
+          <div id="imgContainer" style="position: relative">
+            <picture>
+              <source srcset="<%- url.root %>/img/bg.webp 907w,<%- url.root %>/img/bg_hd.webp 1920w"
+                      sizes="(max-width: 2000px) 907px, 1920px" type="image/webp">
+              <source srcset="<%- url.root %>/img/bg.png 907w,<%- url.root %>/img/bg_hd.png 1920w"
+                      sizes="(max-width: 2000px) 907px, 1920px" type="image/png">
 
-        <!-- TODO: Make sure card is always visible and does not overflow -->
-        <% mediaList.forEach((m, index) => { %>
-        <%- include(`${RES_DIR}/.templates/media.html`, {info: m, index}); %>
+              <img src="<%- url.root %>/img/bg.png" class="img-fluid" onclick="onBtnClick(null)"
+                   alt="Zeichnung des Skulpturengartens, aus der Luft">
+            </picture>
+
+            <div id="imgButtons">
+              <% mediaList.forEach((m, index) => { %>
+              <%- include(`${RES_DIR}/.templates/media/buttons.html`, {info: m, index}); %>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md" style="overflow-x: hidden">
+        <% mediaList.forEach((m, index) => { _%>
+        <%- include(`${RES_DIR}/.templates/media/cards.html`, {info: m, index}); %>
         <% }); %>
       </div>
     </div>
+  </div>
 
+  <div class="container">
     <hr>
 
     <div class="text-center">
