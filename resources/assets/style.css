@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+#imgContainer {
+    position: relative;
+}
+
+#cardContainer {
+    overflow-x: hidden;
+}
+
+#imgButtons button {
+    font-size: 1.25rem;
+    padding:   revert;
+    position:  absolute;
+}
+
+#cardContainer video,
+#cardContainer audio {
+    max-height: 75vh;
+    width:      100%;
+}
+
+/* Animations */
+
 .animated.slideIn {
     animation: slideIn .5s ease;
 }

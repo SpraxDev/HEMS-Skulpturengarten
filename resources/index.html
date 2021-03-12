@@ -17,7 +17,7 @@
 
       <div class="col-md-5">
         <div class="d-grid justify-content-center">
-          <div id="imgContainer" style="position: relative">
+          <div id="imgContainer">
             <picture>
               <source srcset="<%- url.root %>/img/bg.webp 907w,<%- url.root %>/img/bg_hd.webp 1920w"
                       sizes="(max-width: 2000px) 907px, 1920px" type="image/webp">
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div class="col-md" style="overflow-x: hidden">
+      <div id="cardContainer" class="col-md">
         <%_ mediaList.forEach((m, index) => { -%>
         <%- include(`${RES_DIR}/.templates/media/cards.html`, {info: m, index}); %>
         <%_ }); -%>

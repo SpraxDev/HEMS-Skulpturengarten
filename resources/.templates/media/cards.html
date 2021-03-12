@@ -1,6 +1,6 @@
 <div class="card d-none animated" id="card<%- index %>">
   <div class="card-title">
-    <button type="button" class="btn-close float-end" aria-label="Close" onclick="onBtnClick(null)"></button>
+    <button class="btn-close float-end" aria-label="Close" onclick="onBtnClick(null)"></button>
   </div>
 
   <div class="card-body">
@@ -10,9 +10,9 @@
         <h5 class="text-center"><u><%= m.title %></u></h5>
 
         <%_ if(m.type == 'video') { -%>
-        <video style="width: 100%; max-height: 75vh;" src="<%- url.root %>/<%- m.mediaFile %>" controls></video>
+        <video src="<%- url.root %>/<%- m.mediaFile %>" controls></video>
         <%_ } else if(m.type == 'audio') { -%>
-        <audio style="width: 100%; max-height: 75vh;" controls>
+        <audio controls>
           <source src="<%- url.root %>/<%- m.mediaFile %>" type="audio/mp4">
         </audio>
         <%_ } else {
