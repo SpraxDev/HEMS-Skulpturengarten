@@ -5,60 +5,59 @@
 
   <div class="card-body">
     <div class="row">
-      <% info.media.forEach((m) => { %>
+      <%_ info.media.forEach((m) => { -%>
       <div class="col-md">
         <h5 class="text-center"><u><%= m.title %></u></h5>
 
-        <% if(m.type == 'video') { %>
+        <%_ if(m.type == 'video') { -%>
         <video style="width: 100%; max-height: 75vh;" src="<%- url.root %>/<%- m.mediaFile %>" controls></video>
-        <% } else if(m.type == 'audio') { %>
+        <%_ } else if(m.type == 'audio') { -%>
         <audio style="width: 100%; max-height: 75vh;" controls>
           <source src="<%- url.root %>/<%- m.mediaFile %>" type="audio/mp4">
         </audio>
-        <% } else {
+        <%_ } else {
         throw new Error('Unsupported media type');
-        } %>
+        } -%>
 
-        <% if(m.pdfFile) { %>
+        <%_ if(m.pdfFile) { -%>
         <br>
         <div class="text-center">
           <a href="<%- url.root %>/<%- m.pdfFile %>" target="_blank"><%= getUriFile(`${url.root}/${m.pdfFile}`) %></a>
         </div>
-        <% } %>
+        <%_ } -%>
       </div>
-      <br>
-      <% }); %>
+      <%_ }); /* forEach */ -%>
     </div>
 
-    <% if(info.pdfFile) { %>
+    <%_ if(info.pdfFile) { -%>
     <div class="text-center">
-      <a href="<%- url.root %>/<%- info.pdfFile %>" target="_blank"><%= getUriFile(`${url.root}/${info.pdfFile}`)
-        _%></a>
+      <a href="<%- url.root %>/<%- info.pdfFile %>" target="_blank"><%= getUriFile(`${url.root}/${info.pdfFile}`) %></a>
     </div>
-    <% } %>
+    <%_ } -%>
   </div>
 
   <div class="card-footer text-muted">
     <div class="row">
-      <% info.media.forEach((m, i) => { %>
+      <%_ info.media.forEach((m, i) => { -%>
       <div class="col-md">
-        <% if(i != 0) { %>
+        <%_ if(i != 0) { -%>
         <hr class="d-lg-none">
-        <% } %>
-
-        <% for (const key in m.contributors) { %>
-        <% const c = m.contributors[key] %>
+        <%_ } -%>
+        <%_ -%>
+        <%_ for (const key in m.contributors) { -%>
+        <%_ const c = m.contributors[key]; -%>
         <%= contributorTypeName[key] %> von <strong><%= c.name %></strong>
-
-        <% if(c.instagram) { %>
+        <%_ -%>
+        <%_ if(c.instagram) { -%>
         <a href="https://www.instagram.com/<%= encodeURIComponent(c.instagram) %>/" rel="noopener"
            target="_blank"><img src="<%- url.root %>/img/feathericons/instagram.svg"
                                 alt="<%= c.name %> ist @<%= c.instagram %> auf Instagram"></a>
-        <% } %>
+        <%_ } -%>
         <br>
-        <% } /* for...in */ %>
+
+        <%_ } /* for...in */ -%>
       </div>
-      <% }); /* forEach */ %>
+      <%_ }); /* forEach */ -%>
     </div>
   </div>
 </div>

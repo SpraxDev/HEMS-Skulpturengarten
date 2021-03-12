@@ -15,7 +15,7 @@ export const cfg = Object.freeze({
     skipHiddenResources: true
 });
 
-const contributors: { [key: string]: IContributor } = {
+const contributors: { [key: string]: IContributor } = Object.freeze({
     ali: {
         name: 'Ali'
     },
@@ -44,9 +44,9 @@ const contributors: { [key: string]: IContributor } = {
     victoria: {
         name: 'Victoria'
     }
-};
+});
 
-export const ejsData: IEjsData = {
+export const ejsData: IEjsData = Object.freeze({
     RES_DIR: cfg.RES_DIR,
 
     pageTitle: 'HEMS-Skulpturengarten 2020/2021',
@@ -184,7 +184,7 @@ export const ejsData: IEjsData = {
 
         return decodeURIComponent(getBaseName(path));
     }
-};
+});
 
 function getContributor(name: string): IContributor {
     const result = contributors[name];

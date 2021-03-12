@@ -28,19 +28,19 @@
                    alt="Zeichnung des Skulpturengartens, aus der Luft">
             </picture>
 
-            <div id="imgButtons">
-              <% mediaList.forEach((m, index) => { %>
-              <%- include(`${RES_DIR}/.templates/media/buttons.html`, {info: m, index}); %>
-              <% }); %>
+            <div id="imgButtons"><% -%>
+              <%_ mediaList.forEach((m, index) => { %>
+              <%- include(`${RES_DIR}/.templates/media/buttons.html`, {info: m, index}); -%>
+              <%_ }); %>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-md" style="overflow-x: hidden">
-        <% mediaList.forEach((m, index) => { _%>
+        <%_ mediaList.forEach((m, index) => { -%>
         <%- include(`${RES_DIR}/.templates/media/cards.html`, {info: m, index}); %>
-        <% }); %>
+        <%_ }); -%>
       </div>
     </div>
   </div>
