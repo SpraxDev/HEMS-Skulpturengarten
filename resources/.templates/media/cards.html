@@ -43,26 +43,31 @@
     <div class="row">
       <%_ info.media.forEach((m, i) => { -%>
       <div class="col-md">
-        <%_ if(i != 0) { -%>
+        <%_ if (i != 0) { -%>
         <hr class="d-lg-none">
         <%_ } -%>
-        <%_ -%>
-        <%_ for (const key in m.contributors) { -%>
-        <%_ const c = m.contributors[key]; -%>
-        <%= contributorTypeName[key] %> von <strong><%= c.map(e => e.name).join(', ') %></strong>
-        <%_ -%>
-        <%_ if(c.instagram) { -%>
-        <a href="https://www.instagram.com/<%= encodeURIComponent(c.instagram) %>/" rel="noopener"
-           target="_blank"><img src="<%- url.root %>/img/feathericons/instagram.svg"
-                                alt="<%= c.name %> ist @<%= c.instagram %> auf Instagram"></a>
-        <%_ } -%>
-        <%_ if(c.twitter) { -%>
-        <a href="https://twitter.com/<%= encodeURIComponent(c.twitter) %>" rel="noopener"
-           target="_blank"><img src="<%- url.root %>/img/feathericons/twitter.svg"
-                                alt="<%= c.name %> ist @<%= c.twitter %> auf Twitter"></a>
-        <%_ } -%>
-        <br>
 
+        <%_ for (const key in m.contributors) { -%>
+        <%_ const cList = m.contributors[key]; -%>
+        <%_ let names = ''; -%>
+        <%_ cList.forEach((c, cIndex) => { -%>
+        <%_ names += cIndex != 0 ? ', ' : ''; -%>
+        <%_ names += `<strong>${c.name}</strong>`; -%>
+
+        <%_ if (c.twitter) { -%>
+        <%_ names += `<a href="https://twitter.com/${encodeURIComponent(c.twitter)}" rel="noopener"
+                         target="_blank"><img src="${url.root}/img/feathericons/twitter.svg"
+                                              alt="${c.name} ist @${c.twitter} auf Twitter"></a>`; -%>
+        <%_ } /* if[twitter] */ -%>
+
+        <%_ if (c.instagram) { -%>
+        <%_ names += `<a href="https://www.instagram.com/${encodeURIComponent(c.instagram)}/" rel="noopener"
+                         target="_blank"><img src="${url.root}/img/feathericons/instagram.svg"
+                                              alt="${c.name} ist @${c.instagram} auf Instagram"></a>`; -%>
+        <%_ } /* if[instagram] */ -%>
+        <%_ }); -%>
+        <%= contributorTypeName[key] %> von <%- names %>
+        <br>
         <%_ } /* for...in */ -%>
       </div>
       <%_ }); /* forEach */ -%>
