@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="h-100" lang="de">
+<head>
+  <meta charset="UTF-8">
+  <%- include(`${RES_DIR}/.templates/head.html`); %>
+
+  <title><%= pageTitle %></title>
+</head>
+<body class="d-flex flex-column h-100">
+<%- include(`${RES_DIR}/.templates/header.html`); %>
+
+<!-- TODO: Dark theme -->
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md d-none d-lg-block"></div>
+
+      <div class="col-md-5">
+        <div class="d-grid justify-content-center">
+          <div id="imgContainer">
+            <picture>
+              <source srcset="<%- url.root %>/img/bg.webp 907w,<%- url.root %>/img/bg_hd.webp 1920w"
+                      sizes="(max-width: 2000px) 907px, 1920px" type="image/webp">
+              <source srcset="<%- url.root %>/img/bg.png 907w,<%- url.root %>/img/bg_hd.png 1920w"
+                      sizes="(max-width: 2000px) 907px, 1920px" type="image/png">
+
+              <img src="<%- url.root %>/img/bg.png" class="img-fluid"
+                   alt="Zeichnung des Skulpturengartens, aus der Luft">
+            </picture>
+
+            <div id="imgButtons"><% -%>
+              <%_ mediaList.forEach((m, index) => { %>
+              <%- include(`${RES_DIR}/.templates/media/buttons.html`, {info: m, index}); -%>
+              <%_ }); %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="cardContainer" class="col-md">
+        <%_ mediaList.forEach((m, index) => { -%>
+        <%- include(`${RES_DIR}/.templates/media/cards.html`, {info: m, index}); %>
+        <%_ }); -%>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <hr>
+
+    <div class="text-center">
+      <h3>Wir im Skulpturengarten Darmstadt</h3>
+
+      <p class="blockquote">
+        Im Rahmen der Kurse <em>Darstellendes Spiel</em> und <em>Kreatives Schreiben</em>
+        der Heinrich-Emanuel-Merck-Schule Darmstadt sind wir mit unseren Lehrerinnen (Frau Berner und Frau Trieschmann)
+        einen Nachmittag im <em>Skulpturengarten Darmstadt</em> gewesen und
+        wurden dort von Frau Kuhlmann über das Gelände geführt.
+      </p>
+
+      <p class="blockquote">
+        Wir haben uns von den einzelnen Ausstellungsstücken zu, unter anderem, Texte inspirieren lassen und uns dazu
+        entschlossen, diese aufzubereiten und für Interessierte auf dieser Webseite auszustellen.
+      </p>
+    </div>
+
+    <hr>
+
+    <div class="text-center">
+      <h3>
+        Fragen, Ideen, Anregungen, Feedback?
+        <img src="<%- url.root %>/img/feathericons/heart.svg" width="24" height="24" alt="" aria-hidden="true">
+      </h3>
+
+      <p class="blockquote">
+        Schreib' uns gerne auf
+        <a href="https://github.com/SpraxDev/HEMS-Skulpturengarten/discussions" target="_blank"
+           rel="noopener">GitHub Discussions</a> oder an die Mail im <a href="<%- url.root %>/legal">Impressum</a>.
+      </p>
+    </div>
+  </div>
+</main>
+
+<%- include(`${RES_DIR}/.templates/footer.html`); %>
+
+<script src="<%- url.root %>/assets/script.js"></script>
+
+<%- include(`${RES_DIR}/.templates/scripts.html`); %>
+</body>
+</html>

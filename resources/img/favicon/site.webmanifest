@@ -1,0 +1,19 @@
+{
+  "name": "HEMS-Skulpturengarten 2020/2021",
+  "short_name": "HEMS-Skulpturengarten",
+  "icons": [
+    {
+      "src": "<%= url.root %>/img/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "<%= url.root %>/img/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ef3a30",
+  "background_color": "#ef3a30",
+  "display": "standalone"
+}

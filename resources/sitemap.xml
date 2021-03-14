@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc><%= url.root %>/</loc>
+        <lastmod>2021-03-15T01:26:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.00</priority>
+    </url>
+
+    <url>
+        <loc><%= url.root %>/media/das_hoellentor/Das%20H%C3%B6llentor.pdf</loc>
+        <lastmod>2021-02-29T00:00:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc><%= url.root %>/media/11_000_menschen/11.000%20Menschen.pdf</loc>
+        <lastmod>2021-02-03T07:28:14+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc><%= url.root %>/media/18_atemzuege/18%20Atemzu%CC%88ge.pdf</loc>
+        <lastmod>2021-01-29T00:00:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc><%= url.root %>/media/kleiner_vogel/Wie%20ein%20kleiner%20Vogel%20mutig%20wurde.pdf</loc>
+        <lastmod>2021-02-25T12:30:23+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc><%= url.root %>/media/schuh/Schuh%20(Lukas%20und%20Jakob).pdf</loc>
+        <lastmod>2021-03-06T15:31:51+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc><%= url.root %>/legal</loc>
+        <lastmod>2021-03-10T19:00:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc><%= url.root %>/privacy</loc>
+        <lastmod>2021-03-10T19:00:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.60</priority>
+    </url>
+
+    <url>
+        <loc><%= url.root %>/LICENSE</loc>
+        <lastmod>2021-02-20T13:32:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.20</priority>
+    </url>
+    <url>
+        <loc><%= url.root %>/media/LICENSE</loc>
+        <lastmod>2021-02-20T13:32:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.20</priority>
+    </url>
+</urlset>
