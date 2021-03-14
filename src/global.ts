@@ -33,13 +33,15 @@ export interface IMedia {
 }
 
 export interface IMediaContributor {
-    readonly textAuthor?: IContributor;
-    readonly voice?: IContributor;
+    readonly textAuthor?: IContributor[];
+    readonly voice?: IContributor[];
 
-    readonly imgAuthor?: IContributor;
+    readonly imgAuthor?: IContributor[];
 
-    readonly videoAuthor?: IContributor;
-    readonly videoEdit?: IContributor;
+    readonly videoAuthor?: IContributor[];
+    readonly videoEdit?: IContributor[];
+
+    readonly soundEffects?: IContributor[];
 }
 
 export interface IContributor {

@@ -22,6 +22,9 @@ const contributors: { [key: string]: IContributor } = Object.freeze({
     anwar: {
         name: 'Anwar'
     },
+    ariana: {
+        name: 'Ariana'
+    },
     arik: {
         name: 'Arik'
     },
@@ -37,6 +40,9 @@ const contributors: { [key: string]: IContributor } = Object.freeze({
     },
     madeleine: {
         name: 'Madeleine'
+    },
+    niki: {
+        name: 'Niki'
     },
     sara: {
         name: 'Sara'
@@ -66,11 +72,11 @@ export const ejsData: IEjsData = Object.freeze({
                     title: 'Das Höllentor',
                     type: 'video',
                     contributors: {
-                        textAuthor: getContributor('anwar'),
-                        voice: getContributor('ali'),
+                        textAuthor: [getContributor('anwar')],
+                        voice: [getContributor('ali')],
 
-                        imgAuthor: getContributor('lukas'),
-                        videoEdit: getContributor('ali')
+                        imgAuthor: [getContributor('lukas')],
+                        videoEdit: [getContributor('ali')]
                     },
 
                     mediaFile: 'media/das_hoellentor/video.mp4',
@@ -81,10 +87,10 @@ export const ejsData: IEjsData = Object.freeze({
                     title: '11.000 Menschen',
                     type: 'video',
                     contributors: {
-                        textAuthor: getContributor('arik'),
-                        voice: getContributor('jakob'),
+                        textAuthor: [getContributor('arik')],
+                        voice: [getContributor('jakob')],
 
-                        videoAuthor: getContributor('madeleine')
+                        videoAuthor: [getContributor('madeleine')]
                     },
 
                     mediaFile: 'media/11_000_menschen/video.mp4',
@@ -100,13 +106,15 @@ export const ejsData: IEjsData = Object.freeze({
             media: [
                 {
                     title: '18 Atemzüge',
-                    type: 'audio',
+                    type: 'video',
                     contributors: {
-                        textAuthor: getContributor('anwar'),
-                        voice: getContributor('lea')
+                        textAuthor: [getContributor('anwar')],
+                        voice: [getContributor('lea')],
+
+                        soundEffects: [getContributor('ariana'), getContributor('niki')]
                     },
 
-                    mediaFile: 'media/18_atemzuege/audio.m4a',
+                    mediaFile: 'media/18_atemzuege/video.mp4',
                     pdfFile: 'media/18_atemzuege/18%20Atemzüge.pdf'
                 }
             ]
@@ -121,10 +129,10 @@ export const ejsData: IEjsData = Object.freeze({
                     title: 'Wie ein kleiner Vogel mutig wurde',
                     type: 'video',
                     contributors: {
-                        textAuthor: getContributor('victoria'),
-                        voice: getContributor('sara'),
+                        textAuthor: [getContributor('victoria')],
+                        voice: [getContributor('sara')],
 
-                        imgAuthor: getContributor('lea')
+                        imgAuthor: [getContributor('lea')]
                     },
 
                     mediaFile: 'media/kleiner_vogel/video.mp4',
@@ -142,10 +150,10 @@ export const ejsData: IEjsData = Object.freeze({
                     title: 'Schuh (Lukas)',
                     type: 'video',
                     contributors: {
-                        textAuthor: getContributor('lukas'),
-                        voice: getContributor('lukas'),
+                        textAuthor: [getContributor('lukas')],
+                        voice: [getContributor('lukas')],
 
-                        imgAuthor: getContributor('lukas')
+                        imgAuthor: [getContributor('lukas')]
                     },
 
                     mediaFile: 'media/schuh/video_lukas.mp4'
@@ -154,11 +162,10 @@ export const ejsData: IEjsData = Object.freeze({
                     title: 'Schuh (Jakob)',
                     type: 'video',
                     contributors: {
-                        textAuthor: getContributor('jakob'),
-                        voice: getContributor('jakob'),
+                        textAuthor: [getContributor('jakob')],
+                        voice: [getContributor('jakob')],
 
-                        imgAuthor: getContributor('lukas')
-
+                        imgAuthor: [getContributor('lukas')]
                     },
 
                     mediaFile: 'media/schuh/video_jakob.mp4'
@@ -176,7 +183,9 @@ export const ejsData: IEjsData = Object.freeze({
         imgAuthor: 'Bild',
 
         videoAuthor: 'Video',
-        videoEdit: 'Videobearbeitung'
+        videoEdit: 'Videobearbeitung',
+
+        soundEffects: 'Soundeffekte'
     },
 
     getUriFile: (path: string | unknown): string => {
