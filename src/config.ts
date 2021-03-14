@@ -83,14 +83,14 @@ export const ejsData: IEjsData = Object.freeze({
                     pdfFile: 'media/das_hoellentor/Das%20Höllentor.pdf'
                 },
                 {
-                    // TODO: Audio still needs fire-sounds in the background
                     title: '11.000 Menschen',
                     type: 'video',
                     contributors: {
                         textAuthor: [getContributor('arik')],
                         voice: [getContributor('jakob')],
 
-                        videoAuthor: [getContributor('madeleine')]
+                        videoAuthor: [getContributor('madeleine')],
+                        soundEffects: [getContributor('ariana'), getContributor('niki')]
                     },
 
                     mediaFile: 'media/11_000_menschen/video.mp4',
