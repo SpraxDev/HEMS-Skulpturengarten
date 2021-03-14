@@ -29,7 +29,8 @@ const contributors: { [key: string]: IContributor } = Object.freeze({
         name: 'Arik'
     },
     christian: {
-        name: 'Christian Koop'
+        name: 'Christian',
+        twitter: 'SpraxDev'
     },
     jakob: {
         name: 'Jakob'

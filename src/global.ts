@@ -48,5 +48,7 @@ export interface IMediaContributor {
 
 export interface IContributor {
     readonly name: string;
+
     readonly instagram?: string;
+    readonly twitter?: string;
 }

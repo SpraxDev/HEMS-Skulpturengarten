@@ -49,12 +49,17 @@
         <%_ -%>
         <%_ for (const key in m.contributors) { -%>
         <%_ const c = m.contributors[key]; -%>
-        <%= contributorTypeName[key] %> von <strong><%= c.map(e=>e.name).join(', ') %></strong>
+        <%= contributorTypeName[key] %> von <strong><%= c.map(e => e.name).join(', ') %></strong>
         <%_ -%>
         <%_ if(c.instagram) { -%>
         <a href="https://www.instagram.com/<%= encodeURIComponent(c.instagram) %>/" rel="noopener"
            target="_blank"><img src="<%- url.root %>/img/feathericons/instagram.svg"
                                 alt="<%= c.name %> ist @<%= c.instagram %> auf Instagram"></a>
+        <%_ } -%>
+        <%_ if(c.twitter) { -%>
+        <a href="https://twitter.com/<%= encodeURIComponent(c.twitter) %>" rel="noopener"
+           target="_blank"><img src="<%- url.root %>/img/feathericons/twitter.svg"
+                                alt="<%= c.name %> ist @<%= c.twitter %> auf Twitter"></a>
         <%_ } -%>
         <br>
 
