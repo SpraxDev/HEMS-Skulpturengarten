@@ -28,6 +28,9 @@ const contributors: { [key: string]: IContributor } = Object.freeze({
     arik: {
         name: 'Arik'
     },
+    christian: {
+        name: 'Christian Koop'
+    },
     jakob: {
         name: 'Jakob'
     },
@@ -173,6 +176,64 @@ export const ejsData: IEjsData = Object.freeze({
             ],
 
             pdfFile: 'media/schuh/Schuh%20(Lukas%20und%20Jakob).pdf'
+        },
+
+        {
+            offset: {
+                x: '50%',
+                y: '13%'
+            },
+            customColor: 'warning',
+
+            media: [
+                {
+                    title: '',
+                    type: 'image',
+                    contributors: {
+                        imgAuthor: [getContributor('christian')]
+                    },
+
+                    mediaFile: 'media/images/welcher_weg.jpg'
+                }
+            ]
+        },
+        {
+            offset: {
+                x: '52%',
+                y: '35%'
+            },
+            customColor: 'warning',
+
+            media: [
+                {
+                    title: '',
+                    type: 'image',
+                    contributors: {
+                        imgAuthor: [getContributor('lukas')]
+                    },
+
+                    mediaFile: 'media/images/IMG_5627.jpg'
+                }
+            ]
+        },
+        {
+            offset: {
+                x: '80%',
+                y: '60%'
+            },
+            customColor: 'warning',
+
+            media: [
+                {
+                    title: '',
+                    type: 'image',
+                    contributors: {
+                        imgAuthor: [getContributor('lukas')]
+                    },
+
+                    mediaFile: 'media/images/IMG_5635.jpg'
+                }
+            ]
         }
     ],
 

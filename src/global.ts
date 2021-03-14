@@ -13,6 +13,8 @@ export interface IEjsData {
             readonly y: string;
         };
 
+        readonly customColor?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+
         readonly media: IMedia[];
 
         readonly pdfFile?: string;
@@ -25,7 +27,7 @@ export interface IEjsData {
 
 export interface IMedia {
     readonly title: string;
-    readonly type: 'video' | 'audio';
+    readonly type: 'video' | 'audio' | 'image';
     readonly contributors: IMediaContributor;
 
     readonly mediaFile: string;

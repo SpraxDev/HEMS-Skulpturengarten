@@ -15,6 +15,9 @@
         <audio controls>
           <source src="<%- url.root %>/<%- m.mediaFile %>" type="audio/mp4">
         </audio>
+        <%_ } else if(m.type == 'image') { -%>
+        <!-- TODO: Open modal on click -->
+        <img class="img-fluid" src="<%- url.root %>/<%- m.mediaFile %>" alt="Bild mit dem Titel: <%= m.title %>">
         <%_ } else {
         throw new Error('Unsupported media type');
         } -%>
