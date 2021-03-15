@@ -1,6 +1,7 @@
 {
   "name": "HEMS-Skulpturengarten 2020/2021",
   "short_name": "HEMS-Skulpturengarten",
+  "start_url": "<%= url.root %>/",
   "icons": [
     {
       "src": "<%= url.root %>/img/favicon/android-chrome-192x192.png",

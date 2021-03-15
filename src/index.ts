@@ -60,7 +60,7 @@ function populateOutDir(path: string, relativePath?: string): void {
             const lstat = fs.lstatSync(path);
 
             if (lstat.isFile()) {
-                if (['.html', '.xml', '.txt'].includes(getFileExt(path))) {
+                if (['.html', '.xml', '.txt', '.webmanifest'].includes(getFileExt(path))) {
                     fs.writeFileSync(outFile, renderEjs(fs.readFileSync(path, 'utf-8'), ejsData));
                 } else {
                     fs.copyFileSync(path, outFile);
