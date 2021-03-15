@@ -56,13 +56,13 @@
 
         <%_ if (c.twitter) { -%>
         <%_ names += `<a href="https://twitter.com/${encodeURIComponent(c.twitter)}" rel="noopener"
-                         target="_blank"><img src="${url.root}/img/feathericons/twitter.svg"
+                         target="_blank"><img src="${url.root}/img/feathericons/twitter.svg" width="24" height="24"
                                               alt="${c.name} ist @${c.twitter} auf Twitter"></a>`; -%>
         <%_ } /* if[twitter] */ -%>
 
         <%_ if (c.instagram) { -%>
         <%_ names += `<a href="https://www.instagram.com/${encodeURIComponent(c.instagram)}/" rel="noopener"
-                         target="_blank"><img src="${url.root}/img/feathericons/instagram.svg"
+                         target="_blank"><img src="${url.root}/img/feathericons/instagram.svg" width="24" height="24"
                                               alt="${c.name} ist @${c.instagram} auf Instagram"></a>`; -%>
         <%_ } /* if[instagram] */ -%>
         <%_ }); -%>
