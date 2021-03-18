@@ -48,6 +48,9 @@ const contributors: { [key: string]: IContributor } = Object.freeze({
     niki: {
         name: 'Niki'
     },
+    robert: {
+        name: 'Robert'
+    },
     sara: {
         name: 'Sara'
     },
@@ -114,6 +117,8 @@ export const ejsData: IEjsData = Object.freeze({
                     contributors: {
                         textAuthor: [getContributor('anwar')],
                         voice: [getContributor('lea')],
+
+                        imgAuthor: [getContributor('robert')],
 
                         soundEffects: [getContributor('ariana'), getContributor('niki')]
                     },
