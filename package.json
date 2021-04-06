@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "ejs": "^3.1.6",
-    "purgecss": "^4.0.2"
+    "purgecss": "^4.0.3"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.0",
