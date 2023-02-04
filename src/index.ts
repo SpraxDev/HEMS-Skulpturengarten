@@ -7,7 +7,7 @@ import {
     relative as getRelativePath,
     resolve as resolvePath
 } from 'path';
-import PurgeCSS from 'purgecss';
+import { PurgeCSS } from 'purgecss';
 
 import { cfg, ejsData } from './config';
 

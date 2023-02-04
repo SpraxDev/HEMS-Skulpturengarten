@@ -59,7 +59,7 @@ const contributors: { [key: string]: IContributor } = Object.freeze({
     }
 });
 
-export const ejsData: IEjsData = Object.freeze({
+export const ejsData: IEjsData = {
     RES_DIR: cfg.RES_DIR,
 
     pageTitle: 'HEMS-Skulpturengarten 2020/2021',
@@ -260,7 +260,7 @@ export const ejsData: IEjsData = Object.freeze({
 
         return decodeURIComponent(getBaseName(path));
     }
-});
+};
 
 function getContributor(name: string): IContributor {
     const result = contributors[name];
