@@ -31,7 +31,7 @@
     "purgecss": "^5.0.0"
   },
   "devDependencies": {
-    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/node16": "^1.0.4",
     "@types/ejs": "^3.1.1",
     "@types/node": "^16.18.11",
     "ts-node": "^10.9.1",
