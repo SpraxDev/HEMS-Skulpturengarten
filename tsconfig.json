@@ -1,8 +1,7 @@
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
+  "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-    "sourceMap": true,
-    "outDir": "./build"
+    "outDir": "./build/"
   },
   "include": [
     "src/**/*.ts"
