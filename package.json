@@ -23,7 +23,7 @@
     "url": "https://github.com/SpraxDev/HEMS-Skulpturengarten/issues"
   },
   "engines": {
-    "node": ">=20.0.0",
+    "node": ">=22.0.0",
     "npm": ">=10.0.0"
   },
   "dependencies": {
@@ -31,9 +31,9 @@
     "purgecss": "^7.0.2"
   },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.4",
+    "@tsconfig/node22": "^22.0.0",
     "@types/ejs": "^3.1.5",
-    "@types/node": "^18.19.68",
+    "@types/node": "^22.10.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
