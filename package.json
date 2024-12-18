@@ -28,14 +28,14 @@
   },
   "dependencies": {
     "ejs": "^3.1.10",
-    "purgecss": "^6.0.0"
+    "purgecss": "^7.0.2"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "@types/ejs": "^3.1.5",
-    "@types/node": "^18.19.39",
+    "@types/node": "^18.19.68",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "typescript": "^5.7.2"
   },
   "nodemonConfig": {
     "ext": "*",
